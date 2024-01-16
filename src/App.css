@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app{
+  background-color: #D3D3D3;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+
+.cards-container{
+  width: 1000px;
+  height: 600px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card{
+  display: inline-block;
+  margin: 5px;
+  height: calc(200px - 10px);
+  width: calc(250px - 10px);
+  cursor: pointer;
+}
+
+.card:hover{
+  transform: scale(0.98);
+}
+
+.card-image{
+  height: calc(200px - 10px);
+  width: calc(250px - 10px);
+}
+
+.congratulations{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 2em;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    flex-direction: column;
+}
+.visible{
+    opacity: 1;
+    z-index: 0;
+}
+
+.balloons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.balloon {
+  width: 20px;
+  height: 30px;
+  background-color: #e74c3c; /* Color del globo */
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Forma de globo */
+  display: inline-block;
+  margin: 0 5px;
+  animation: floatUp 2s ease-in-out infinite;
+}
+
+.top-balloons,
+.bottom-balloons {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-balloons {
+    top: 35%;
+}
+
+.bottom-balloons {
+    top: 60%;
+}
+
+@keyframes floatUp {
+  0%, 100% {
+      transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+      transform: translateY(-20px);
   }
+}
+
+.string {
+  position: absolute;
+  width: 2px;
+  height: 50px; /* Ajusta la longitud del hilo */
+  background-color: #000; /* Color del hilo */
+  top: 0;
+  left: 50%;
+  transform: translateY(60%);
+}
+
+.play-again-button {
+  background-color: #34a853;  /* Color del botón (puedes cambiarlo) */
+  color: #ffffff;  /* Color del texto del botón (puedes cambiarlo) */
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 20px;  /* Espacio entre el texto y el botón (puedes ajustarlo) */
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  top: 70%;
+  position: absolute;
+}
+
+.play-again-button:hover {
+  background-color: #2e8b57;  /* Cambia el color al pasar el ratón por encima (puedes ajustarlo) */
+}
+
+.congrats-message {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;  /* Ajusta el espacio entre el mensaje y los globos (puedes cambiarlo) */
+  text-align: center;
+  color: black;  /* Color del mensaje (puedes cambiarlo) */
 }
