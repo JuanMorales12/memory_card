@@ -1,4 +1,4 @@
-# Juego memory card con caras de Messi
+# Juego memory card
 
 Se puede ver en: https://juanmorales12.github.io/memory_card/
 
